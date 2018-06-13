@@ -6,30 +6,49 @@
 	</head>
 	
 	<body>
-		<form action="https://colisweb--Sandbox1.cs88.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+		
+<form action="https://colisweb--Develop.cs83.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
 
-		<input type=hidden name="orgid" value="00D9E0000000Vpw">
-		<input type=hidden name="retURL" value="http://www.colisweb.com">
+<input type=hidden name="orgid" value="00D4E000000DPfQ">
+<input type=hidden name="retURL" value="http://">
 
-		<!--  ----------------------------------------------------------------------  -->
-		<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-		<!--  these lines if you wish to test in debug mode.                          -->
-		<!--  <input type="hidden" name="debug" value=1>                              -->
-		<!--  <input type="hidden" name="debugEmail" value="lucas@colisweb.com">      -->
-		<!--  ----------------------------------------------------------------------  -->
+Adresse Client:<input  id="00N4E0000029JBa" maxlength="255" name="00N4E0000029JBa" size="20" type="text" /><br>
 
-		<label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
+Code Postal:<input  id="00N4E0000029JBk" maxlength="6" name="00N4E0000029JBk" size="20" type="text" /><br>
 
-		<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+Ville:<input  id="00N4E0000029JBf" maxlength="200" name="00N4E0000029JBf" size="20" type="text" /><br>
 
-		<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+Date de livraison souhaitée:<span class="dateInput dateOnlyInput"><input  id="00N4E0000029JEj" name="00N4E0000029JEj" size="12" type="text" /></span><br>
 
-		<label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+Heure de début de créneau:<span class="timeContainer"><input  id="00N4E0000029JEo" name="00N4E0000029JEo" placeholder="HH:MM" size="12" type="text" /></span><br>
 
-		<label for="description">Description</label><textarea name="description"></textarea><br>
+Option de livraison:<select  id="00N4E0000029JEt" multiple="multiple" name="00N4E0000029JEt" title="Option de livraison"><option value="Piece du choix">Piece du choix</option>
+<option value="Pied du camion">Pied du camion</option>
+</select><br>
 
-		<input type="submit" name="submit">
+Nombre d&#39;étages:<input  id="00N4E0000029JEy" name="00N4E0000029JEy" size="20" type="text" /><br>
 
-		</form>
+Ascenseur:<input  id="00N4E0000029JOK" name="00N4E0000029JOK" type="checkbox" value="1" /><br>
+
+Descriptif des produits:<input  id="00N4E0000029JC4" maxlength="255" name="00N4E0000029JC4" size="20" type="text" /><br>
+
+Longueur maximale (cm):<input  id="00N4E0000029JCE" name="00N4E0000029JCE" size="20" type="text" /><br>
+
+Largeur maximale (cm):<input  id="00N4E0000029JCs" name="00N4E0000029JCs" size="20" type="text" /><br>
+
+Hauteur maximale (cm):<input  id="00N4E0000029JCx" name="00N4E0000029JCx" size="20" type="text" /><br>
+
+Poids total (kg):<input  id="00N4E0000029JD2" name="00N4E0000029JD2" size="20" type="text" /><br>
+
+Poids du produit le plus lourd (kg):<input  id="00N4E0000029JD7" name="00N4E0000029JD7" size="20" type="text" /><br>
+
+Remarques:<textarea  id="00N4E0000029JF3" name="00N4E0000029JF3" type="text" wrap="soft"></textarea><br>
+
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+<input type="submit" name="submit">
+
+</form>
+
 	</body>
 </html>
