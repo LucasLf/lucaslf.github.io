@@ -1,43 +1,56 @@
 
 <form action="https://colisweb--Develop.cs83.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
 
-<input type=hidden name="orgid" value="00D4E000000DPfQ">
-<input type=hidden name="retURL" value="http://">
+	<input type=hidden name="orgid" value="00D4E000000DPfQ">
+	<input type=hidden name="retURL" value="http://"> <!-- TO DO: Définir l'url de retour -->
 
-Adresse Client:<input  id="00N4E0000029JBa" maxlength="255" name="00N4E0000029JBa" size="20" type="text" /><br>
+	<!-- INFORMATIONS MAGASINS (à récupérer via la BDD) -->
+	<input  name="00N4E0000029OME" type="hidden" /> <!-- Nom magasin -->
+	<input  name="00N4E0000029OMT" type="hidden" /> <!-- Agglomération -->
+	<input  name="00N4E0000029OLu" type="hidden" /> <!-- Adresse -->
+	<input  name="00N4E0000029OLz" type="hidden" /> <!-- Ville -->
+	<input  name="00N4E0000029OM9" type="hidden" /> <!-- Code Postal -->
 
-Code Postal:<input  id="00N4E0000029JBk" maxlength="6" name="00N4E0000029JBk" size="20" type="text" /><br>
+	<!-- INFORMATIONS SUR LE CLIENT -->
+	Adresse:<input  id="00N4E0000029JBa" maxlength="255" name="00N4E0000029JBa" size="20" type="text" required/><br>
+	Ville:<input  id="00N4E0000029JBf" maxlength="255" name="00N4E0000029JBf" size="20" type="text" required/><br>
+	CP:<input  id="00N4E0000029JBk" maxlength="6" name="00N4E0000029JBk" size="20" type="text" required/><br>
 
-Ville:<input  id="00N4E0000029JBf" maxlength="200" name="00N4E0000029JBf" size="20" type="text" /><br>
+	<!-- INFORMATIONS SUR LA LIVRAISON -->
+	Date de livraison souhaitée:<span class="dateInput dateOnlyInput"><input  id="00N4E0000029JEj" name="00N4E0000029JEj" size="12" type="text" placeholder="Date de livraison souhaitée" required/></span><br>
+	Heure de début du créneau:
+	<select  id="00N4E0000029JEo" name="00N4E0000029JEo" title="Heure de début du créneau" required>
+		<option value="">--None--</option>
+		<option value="8H00">8H00</option>
+		<option value="9H00">9H00</option>
+		<option value="10H00">10H00</option>
+		<option value="11H00">11H00</option>
+		<option value="12H00">12H00</option>
+		<option value="13H00">13H00</option>
+		<option value="14H00">14H00</option>
+		<option value="15H00">15H00</option>
+		<option value="16H00">16H00</option>
+		<option value="17H00">17H00</option>
+		<option value="18H00">18H00</option>
+	</select><br>
+	Pied du camion:<input  id="00N4E0000029OK3" name="00N4E0000029OK3" type="checkbox" value="1" /><br>
+	Pièce du choix:<input  id="00N4E0000029OK8" name="00N4E0000029OK8" type="checkbox" value="1" /><br>
+	Nombre d&#39;étages:<input  id="00N4E0000029JEy" name="00N4E0000029JEy" type="number" min="0" placeholder="Si pièce du choix" /><br>
+	Ascenseur:<input  id="00N4E0000029JOK" name="00N4E0000029JOK" type="checkbox" value="1" /><br>
+	Retour client:<input  id="00N4E0000029OJy" name="00N4E0000029OJy" type="checkbox" value="1" /><br>
 
-Date de livraison souhaitée:<span class="dateInput dateOnlyInput"><input  id="00N4E0000029JEj" name="00N4E0000029JEj" size="12" type="text" /></span><br>
+	<!-- INFORMATIONS SUR LES PRODUITS -->
+	Descriptif:<textarea name="description" required></textarea><br>
+	Longueur maximale:<input  id="00N4E0000029JCE" name="00N4E0000029JCE" type="number" placeholder="(cm)" min="0" required /><br>
+	Largeur maximale:<input  id="00N4E0000029JCs" name="00N4E0000029JCs" type="number" placeholder="(cm)" min="0" required /><br>
+	Hauteur maximale:<input  id="00N4E0000029JCx" name="00N4E0000029JCx" type="number" placeholder="(cm)" min="0" required /><br>
+	Poids total:<input  id="00N4E0000029JD2" name="00N4E0000029JD2" type="number" placeholder="(kg)" min="0" required /><br>
+	Poids du produit le plus lourd:<input  id="00N4E0000029JD7" name="00N4E0000029JD7" type="number" min="0" placeholder="(kg)" required /><br>
+	Remarques:<textarea  id="00N4E0000029JF3" name="00N4E0000029JF3" type="text" wrap="soft" placeholder="Difficultés d'accès..." ></textarea><br>
 
-Heure de début de créneau:<span class="timeContainer"><input  id="00N4E0000029JEo" name="00N4E0000029JEo" placeholder="HH:MM" size="12" type="text" /></span><br>
+	<!-- ADRESSE EMAIL D'ENVOI DU DEVIS -->
+	Email:<input  id="email" name="email" type="email" required /><br>
 
-Option de livraison:<select  id="00N4E0000029JEt" multiple="multiple" name="00N4E0000029JEt" title="Option de livraison"><option value="Piece du choix">Piece du choix</option>
-<option value="Pied du camion">Pied du camion</option>
-</select><br>
-
-Nombre d&#39;étages:<input  id="00N4E0000029JEy" name="00N4E0000029JEy" size="20" type="text" /><br>
-
-Ascenseur:<input  id="00N4E0000029JOK" name="00N4E0000029JOK" type="checkbox" value="1" /><br>
-
-Descriptif des produits:<input  id="00N4E0000029JC4" maxlength="255" name="00N4E0000029JC4" size="20" type="text" /><br>
-
-Longueur maximale (cm):<input  id="00N4E0000029JCE" name="00N4E0000029JCE" size="20" type="text" /><br>
-
-Largeur maximale (cm):<input  id="00N4E0000029JCs" name="00N4E0000029JCs" size="20" type="text" /><br>
-
-Hauteur maximale (cm):<input  id="00N4E0000029JCx" name="00N4E0000029JCx" size="20" type="text" /><br>
-
-Poids total (kg):<input  id="00N4E0000029JD2" name="00N4E0000029JD2" size="20" type="text" /><br>
-
-Poids du produit le plus lourd (kg):<input  id="00N4E0000029JD7" name="00N4E0000029JD7" size="20" type="text" /><br>
-
-Remarques:<textarea  id="00N4E0000029JF3" name="00N4E0000029JF3" type="text" wrap="soft"></textarea><br>
-
-<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
-
-<input type="submit" name="submit">
+	<input type="submit" name="submit">
 
 </form>
