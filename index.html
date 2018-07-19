@@ -6,34 +6,68 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-  <div class="w3-container w3-green">
-  <h1>W3Schools Demo</h1> 
-  <p>Resize this responsive page!</p> 
-</div>
+  
+<form action="https://colisweb--Develop.cs83.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+<!-- TO DO: Utiliser l'URL suivante pour la Prod : https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8 -->
 
-<div class="w3-row-padding">
-  <div class="w3-third">
-    <h2>London</h2>
-    <p>London is the capital city of England.</p>
-    <p>It is the most populous city in the United Kingdom,
-    with a metropolitan area of over 13 million inhabitants.</p>
-  </div>
-  <button id="my_custom_link">Intercom</button>
+	<input type=hidden name="orgid" value="00D4E000000DPfQ"> <!-- TO DO: Changer la value pour celle de la prod : 00D0Y000001dexM" -->
+	<input type=hidden name="retURL" value="http://"> <!-- TO DO: Définir l'url de retour -->
 
-  <div class="w3-third">
-    <h2>Paris</h2>
-    <p>Paris is the capital of France.</p> 
-    <p>The Paris area is one of the largest population centers in Europe,
-    with more than 12 million inhabitants.</p>
-  </div>
+	<!-- INFORMATIONS MAGASINS (à récupérer via la BDD) -->
+	<input  name="00N4E0000029OME" type="hidden" value="" /> <!-- Nom magasin --> <!-- TO DO: Ajouter value -->
+	<input  name="00N4E0000029TGV" type="hidden" value="" /> <!-- ID magasin --> <!-- TO DO: Ajouter value -->
+	<input  name="00N4E0000029OMT" type="hidden" value="" /> <!-- Agglomération --> <!-- TO DO: Ajouter value -->
+	<input  name="00N4E0000029OLu" type="hidden" value="" /> <!-- Adresse --> <!-- TO DO: Ajouter value -->
+	<input  name="00N4E0000029OLz" type="hidden" value="" /> <!-- Ville --> <!-- TO DO: Ajouter value -->
+	<input  name="00N4E0000029OM9" type="hidden" value="" /> <!-- Code Postal --> <!-- TO DO: Ajouter value -->
 
-  <div class="w3-third">
-    <h2>Tokyo</h2>
-    <p>Tokyo is the capital of Japan.</p>
-    <p>It is the center of the Greater Tokyo Area,
-    and the most populous metropolitan area in the world.</p>
-  </div>
-</div>
+	<!-- INFORMATIONS POUR SUBJECT -->
+	<input  name="subject" type="hidden" value="" /> <!-- TO DO: Ajouter value ("Devis - " + Nom magasin) -->
+
+	<!-- INFORMATIONS SUR LE CLIENT -->
+	Adresse:<input  id="00N4E0000029JBa" maxlength="255" name="00N4E0000029JBa" size="20" type="text" required/><br>
+	Ville:<input  id="00N4E0000029JBf" maxlength="255" name="00N4E0000029JBf" size="20" type="text" required/><br>
+	CP:<input  id="00N4E0000029JBk" maxlength="6" name="00N4E0000029JBk" size="20" type="text" required/><br>
+
+	<!-- INFORMATIONS SUR LA LIVRAISON -->
+	Date:<input id="00N4E0000029JEj" name="00N4E0000029JEj" type="date" required/><br> <!-- TO DO: Transformer au format DD/MM/YYYY pour SF -->
+	Heure de début du créneau:
+	<select  id="00N4E0000029JEo" name="00N4E0000029JEo" title="Heure de début du créneau" required>
+		<option value="">--None--</option>
+		<option value="8H00">8H00</option>
+		<option value="9H00">9H00</option>
+		<option value="10H00">10H00</option>
+		<option value="11H00">11H00</option>
+		<option value="12H00">12H00</option>
+		<option value="13H00">13H00</option>
+		<option value="14H00">14H00</option>
+		<option value="15H00">15H00</option>
+		<option value="16H00">16H00</option>
+		<option value="17H00">17H00</option>
+		<option value="18H00">18H00</option>
+	</select><br>
+	Pied du camion:<input  id="00N4E0000029OK3" name="00N4E0000029OK3" type="checkbox" value="1" /><br>
+	Pièce du choix:<input  id="00N4E0000029OK8" name="00N4E0000029OK8" type="checkbox" value="1" /><br>
+	Nombre d&#39;étages:<input  id="00N4E0000029JEy" name="00N4E0000029JEy" type="number" min="0" placeholder="Si pièce du choix" /><br>
+	Ascenseur:<input  id="00N4E0000029JOK" name="00N4E0000029JOK" type="checkbox" value="1" /><br>
+	Retour client:<input  id="00N4E0000029OJy" name="00N4E0000029OJy" type="checkbox" value="1" /><br>
+
+	<!-- INFORMATIONS SUR LES PRODUITS -->
+	Descriptif:<textarea name="description" placeholder="Contenu de la commande" required></textarea><br>
+	Longueur maximale:<input  id="00N4E0000029JCE" name="00N4E0000029JCE" type="number" placeholder="(cm)" min="0" required /><br>
+	Largeur maximale:<input  id="00N4E0000029JCs" name="00N4E0000029JCs" type="number" placeholder="(cm)" min="0" required /><br>
+	Hauteur maximale:<input  id="00N4E0000029JCx" name="00N4E0000029JCx" type="number" placeholder="(cm)" min="0" required /><br>
+	Poids total:<input  id="00N4E0000029JD2" name="00N4E0000029JD2" type="number" placeholder="(kg)" min="0" required /><br>
+	Poids du produit le plus lourd:<input  id="00N4E0000029JD7" name="00N4E0000029JD7" type="number" min="0" placeholder="(kg)" required /><br>
+	Remarques:<textarea  id="00N4E0000029JF3" name="00N4E0000029JF3" type="text" wrap="soft" placeholder="Difficultés d'accès..." ></textarea><br>
+
+	<!-- ADRESSE EMAIL D'ENVOI DU DEVIS -->
+	Email:<input  id="email" name="email" type="email" required /><br>
+
+	<input type="submit" name="submit">
+
+</form>
+
   <script>
     window.intercomSettings = {
       app_id: "we8klbhk",
