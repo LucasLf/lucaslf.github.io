@@ -48,6 +48,17 @@
 	</head>
 
 <body>
+	
+	<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoieWF5ZWQyNzMwOSIsImEiOiJjazNnMzI0MzIwM3J2M2NzZTgwaTU5amJxIn0.cU7N9Cn2Enz5tp84FDpeQA';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+</script>
+
+	
 	<button onclick="myFunction()">Click me</button>
 
 
